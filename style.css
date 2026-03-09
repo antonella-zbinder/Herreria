@@ -1,0 +1,161 @@
+:root {
+    --principal: #111;
+    --acento: #d4af37;
+    --gris-fondo: #2c2c2c;
+    --gris-claro: #f4f4f4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background-color: var(--gris-claro); overflow-x: hidden; scroll-behavior: smooth; }
+
+header { background: var(--principal); height: 70px; display: flex; align-items: center; position: fixed; width: 100%; z-index: 1000; top: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+.navbar { display: flex; justify-content: flex-end; align-items: center; width: 90%; max-width: 1200px; margin: 0 auto; position: relative; }
+.insignia-link { position: absolute; left: -40px; top: 0.5px; z-index: 1001; }
+.logo-insignia { height: 140px; width: 140px; object-fit: cover; border-radius: 50%; border: 5px solid var(--acento); background: #1a1a1a; box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
+
+.nav-links { list-style: none; display: flex; gap: 25px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 14px; }
+.btn-contacto { background: var(--acento); color: black !important; padding: 10px 20px; border-radius: 5px; font-weight: bold; }
+
+/* HERO Y TÍTULO ANIMADO */
+.hero { margin-top: 70px; height: 75vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/hero.jpg') center/cover; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; }
+
+.titulo-robusto {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 3.2rem;
+    line-height: 1;
+    text-shadow: 4px 4px 0px #000;
+    text-transform: uppercase;
+    animation: golpeMartillo 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.titulo-robusto .marca { font-size: 4.5rem; color: var(--acento); display: block; margin-top: 5px; }
+
+.subtitulo-industrial {
+    color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; margin-top: 20px;
+    display: inline-block; padding: 5px 15px; border: 1px solid var(--acento); background: rgba(212, 175, 55, 0.1);
+    opacity: 0; animation: entradaSuave 0.5s ease-out 0.8s forwards;
+}
+
+@keyframes golpeMartillo { 0% { opacity: 0; transform: translateY(-100px) scale(1.5); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes entradaSuave { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* SERVICIOS */
+.servicios { padding: 100px 10% 50px; text-align: center; }
+.servicios h2 { font-size: 2.2rem; margin-bottom: 20px; }
+.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+.servicio-card { background: white; padding: 40px 20px; border-radius: 10px; border-bottom: 5px solid var(--acento); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.servicio-card i { font-size: 2.5rem; color: var(--acento); margin-bottom: 15px; }
+
+/* GALERÍA (ESTABILIZADO) */
+.galeria { padding: 80px 10%; background: #e9e9e9; text-align: center; }
+.swiper { width: 100%; padding: 50px 0; }
+.trabajo-item { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 500px; margin: 0 auto; }
+
+.comparador { position: relative; width: 100%; min-height: 300px; border-radius: 10px; overflow: hidden; cursor: pointer; }
+.img-wrapper { position: absolute; width: 100%; height: 100%; top: 0; left: 0; transition: opacity 0.5s ease; }
+.img-wrapper img { width: 100%; height: 100%; object-fit: contain; background: #eee; }
+.despues { opacity: 0; z-index: 2; } .antes { z-index: 1; }
+.label { position: absolute; bottom: 15px; background: rgba(0,0,0,0.7); color: white; padding: 5px 15px; border-radius: 20px; font-size: 11px; z-index: 10; }
+.antes .label { left: 15px; } .despues .label { right: 15px; background: var(--acento); color: black; }
+
+.video-container { width: 100%; border-radius: 10px; overflow: hidden; background: #000; position: relative; padding-top: 56.25%; }
+.video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* CONTACTO Y FOOTER */
+.cuadro-contacto { background: #111; padding: 60px 10%; border-top: 4px solid var(--acento); }
+.contacto-container { display: flex; flex-direction: column; align-items: center; max-width: 1100px; margin: 0 auto; gap: 30px; text-align: center; }
+.contacto-texto h2 { color: var(--acento); font-size: 2.2rem; }
+.contacto-texto p { color: white; font-size: 1.1rem; }
+.contacto-botones { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.btn-whatsapp-grande { background: #25d366; color: white; text-decoration: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+
+footer {
+    background: var(--principal);
+    color: #f4f4f4;
+    padding: 50px 10% 20px;
+    text-align: center;
+}
+
+.footer-info h3 {
+    color: var(--acento);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* El logo de Google Maps en amarillo */
+.ubicacion i {
+    color: var(--acento); /* Color dorado/amarillo */
+    font-size: 1.4rem;
+    margin-right: 8px;
+}
+
+.ubicacion {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.ubicacion span {
+    font-weight: bold;
+    color: var(--acento);
+}
+
+
+
+.footer-copy {
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Estilo para que el link de mapa se vea profesional */
+.mapa-link {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit;       /* Mantiene el color blanco/gris del texto */
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.mapa-link:hover {
+    transform: translateY(-3px); /* Pequeño efecto al pasar el mouse */
+}
+
+.mapa-link .ubicacion i {
+    color: var(--acento); /* Asegura que el logo de Maps sea AMARILLO */
+    transition: 0.3s;
+}
+
+.mapa-link:hover .ubicacion i {
+    text-shadow: 0 0 10px var(--acento); /* Brillo amarillo al pasar el mouse */
+}
+@media (max-width: 768px) {
+    .titulo-robusto { font-size: 1.8rem; }
+    .titulo-robusto .marca { font-size: 2.6rem; }
+    .insignia-link { left: 50%; transform: translateX(-50%); top: 15px; }
+    .logo-insignia { height: 100px; width: 100px; }
+    .nav-links { margin-top: 60px; gap: 10px; }
+    .contacto-container { flex-direction: column; text-align: center; }
+}
+
+@media (min-width: 900px) {
+    .contacto-container { flex-direction: row; justify-content: space-between; text-align: left; }
+}
+
+/* --- EFECTO DE VIBRACIÓN POR EL IMPACTO DEL MARTILLO --- */
+
+/* Aplicamos la sacudida a todo el contenido del hero */
+.hero-content {
+    /* La sacudida dura poquito (0.2s) y empieza casi al final de la caída (0.7s) */
+    animation: sacudidaSeccion 0.2s linear 0.7s;
+}
+
+@keyframes sacudidaSeccion {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(3px, 3px); }
+    50% { transform: translate(-3px, -3px); }
+    75% { transform: translate(3px, -3px); }
+    100% { transform: translate(0,0); }
+}
