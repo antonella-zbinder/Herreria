@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortinas Metálicas Alvarez - Masias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#inicio" class="insignia-link">
+                <img src="img/logo.jpg" alt="Alvarez - Masias" class="logo-insignia">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto" class="btn-contacto">Presupuesto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 class="titulo-robusto animacion-golpe">
+                CORTINAS METÁLICAS <br>
+                <span class="marca">ALVAREZ - MASIAS</span>
+            </h1>
+            <p class="subtitulo-industrial animacion-entrada">Fabricación • Instalación • Reparación</p>
+        </div>
+    </section>
+
+    <section id="servicios" class="servicios">
+        <h2>Nuestros Trabajos</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card"><i class="fas fa-industry"></i><h3>Fabricación</h3><p>Cortinas a medida.</p></div>
+            <div class="servicio-card"><i class="fas fa-tools"></i><h3>Reparación</h3><p>Service y urgencias.</p></div>
+            <div class="servicio-card"><i class="fas fa-cog"></i><h3>Motores</h3><p>Automatizaciones.</p></div>
+            <div class="servicio-card"><i class="fas fa-hammer"></i><h3>Herrería</h3><p>Trabajos integrales.</p></div>
+        </div>
+    </section>
+    
+    <section id="proyectos" class="galeria">
+        <h2>Trabajos Realizados</h2>
+        <p class="subtitle">Deslizá para ver nuestras transformaciones y videos</p>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="trabajo-item">
+                        <div class="comparador" onclick="toggleComparar(this)">
+                            <div class="img-wrapper antes">
+                                <img src="img/antes-vertical.jpg" alt="Antes">
+                                <span class="label">Antes</span>
+                            </div>
+                            <div class="img-wrapper despues">
+                                <img src="img/despues-vertical.jpg" alt="Después">
+                                <span class="label">Después</span>
+                            </div>
+                        </div>
+                        <h3>Reparación de Persiana Merlo</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="trabajo-item">
+                        <div class="video-container">
+                            <video controls poster="img/antes-horizontal.jpg">
+                                <source src="trabajo-video.mp4" type="video/mp4">
+                                Tu navegador no soporta videos.
+                            </video>
+                        </div>
+                        <h3>Instalación en vivo</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="trabajo-item">
+                        <div class="comparador" onclick="toggleComparar(this)">
+                            <div class="img-wrapper antes">  
+                                <img src="img/1000164595.jpg" alt="Antes">
+                                <span class="label">Antes</span>
+                            </div>
+                            <div class="img-wrapper despues">                                
+                                <img src="img/1000164598.jpg" alt="Después">
+                                <span class="label">Después</span>
+                            </div>
+                        </div>
+                        <h3>Instalación de reja metálica</h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section id="contacto" class="cuadro-contacto">
+        <div class="contacto-container">
+            <div class="contacto-texto">
+                <h2>Urgencias 24 HS</h2>
+                <p>Escribinos ahora para un presupuesto sin cargo:</p>
+            </div>
+            <div class="contacto-botones">
+                <a href="https://wa.me/5491138841767" target="_blank" class="btn-whatsapp-grande">
+                    <i class="fab fa-whatsapp"></i> 11 3884-1767
+                </a>
+                <a href="https://wa.me/5491133159749" target="_blank" class="btn-whatsapp-grande">
+                    <i class="fab fa-whatsapp"></i> 11 3315-9749
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto-info">
+    <div class="footer-info">
+        <h3>Cortinas Metálicas Alvarez - Masias</h3>
+        
+        <a href="https://www.google.com/maps/search/?api=1&query=Cucha+Cucha+1496+Merlo+Buenos+Aires" target="_blank" class="mapa-link">
+            <p class="ubicacion">
+                <i class="fas fa-map-marker-alt"></i> 
+                Cucha Cucha 1496 (entre Burela y Aconcagua) 
+                <br><span>Zona Oeste - Merlo</span>
+            </p>
+        </a>
+
+    </div>
+    <div class="footer-copy">
+        <p>© 2026 Herrería Alvarez-Masias. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
