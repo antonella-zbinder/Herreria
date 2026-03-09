@@ -320,27 +320,56 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Ajustamos el header para que no corte el logo */
+    header {
+        height: 60px; /* Un poco más bajo para móviles */
+    }
+
+    /* Forzamos que la navbar sea un renglón y no columna */
+    .navbar {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end; /* Links a la derecha */
+        align-items: center;
+    }
+
+    /* Posicionamos el logo a la izquierda y flotando */
     .insignia-link {
-        left: 10%;
-        transform: translateX(-50%);
-        top: 30px;
+        left: 10px;
+        top: 5px; /* Esto lo hace bajar del header hacia el gris */
+        transform: none;
     }
+
     .logo-insignia {
-        height: 50px; /* Ajusta según sea necesario */
-        width: 50px; /* Ajusta según sea necesario */
-        object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+        height: 80px; /* Tamaño intermedio para que se luzca */
+        width: 80px;
+        border-width: 3px;
     }
+
+    /* Links en una sola línea y más pequeños */
     .nav-links {
-        flex-direction: column; /* Cambia a columna en móvil */
-   
-        gap: 10%;
+        flex-direction: row; 
+        margin-top: 0;
+        gap: 8px; /* Espacio reducido entre palabras */
     }
+
     .nav-links a {
-        font-size: 11px; /* Ajusta el tamaño del texto */
+        font-size: 10px; /* Texto más chico para que entre todo */
+        letter-spacing: 0.5px;
     }
+
+    /* El botón de presupuesto también más compacto */
+    .btn-contacto {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    /* Ajuste del cartel principal */
     .cartel {
-        height: 60vh; /* Ajusta la altura en móvil */
-        padding-top: 20%; /* Ajusta el padding */
+        margin-top: 60px; /* Igual al alto del header */
+        height: 60vh;
+        padding-top: 10%;
     }
 }
 
@@ -359,6 +388,7 @@ footer {
 @keyframes entradaSuave { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 .cartel { animation: sacudidaSeccion 0.2s linear 0.7s; }
+
 
 
 
