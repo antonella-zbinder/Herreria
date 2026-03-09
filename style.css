@@ -69,7 +69,11 @@ header {
     border-color: #fff;
 }
 
-.nav-links { list-style: none; display: flex; gap: 25px; align-items: center; }
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 25px; 
+    align-items: center; }
 .nav-links a { 
     color: white; 
     text-decoration: none; 
@@ -328,8 +332,8 @@ footer {
     }
     .nav-links {
         flex-direction: column; /* Cambia a columna en móvil */
-        margin-top: 60px;
-        gap: 10px;
+   
+        gap: 10%;
     }
     .nav-links a {
         font-size: 11px; /* Ajusta el tamaño del texto */
@@ -355,5 +359,6 @@ footer {
 @keyframes entradaSuave { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 .cartel { animation: sacudidaSeccion 0.2s linear 0.7s; }
+
 
 
