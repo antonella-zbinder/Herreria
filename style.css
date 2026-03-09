@@ -319,7 +319,7 @@ footer {
     .insignia-link {
         left: 10%;
         transform: translateX(-50%);
-        top: 15px;
+        top: 30px;
     }
     .logo-insignia {
         height: 50px; /* Ajusta según sea necesario */
@@ -355,4 +355,5 @@ footer {
 @keyframes entradaSuave { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 .cartel { animation: sacudidaSeccion 0.2s linear 0.7s; }
+
 
