@@ -317,13 +317,13 @@ footer {
 
 @media (max-width: 768px) {
     .insignia-link {
-        left: 50%;
+        left: 10%;
         transform: translateX(-50%);
         top: 15px;
     }
     .logo-insignia {
-        height: 100px; /* Ajusta según sea necesario */
-        width: 100px; /* Ajusta según sea necesario */
+        height: 50px; /* Ajusta según sea necesario */
+        width: 50px; /* Ajusta según sea necesario */
         object-fit: contain; /* Asegura que la imagen mantenga su proporción */
     }
     .nav-links {
@@ -355,3 +355,4 @@ footer {
 @keyframes entradaSuave { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 .cartel { animation: sacudidaSeccion 0.2s linear 0.7s; }
+
