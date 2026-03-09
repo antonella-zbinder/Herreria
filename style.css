@@ -316,12 +316,30 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .insignia-link { left: 50%; transform: translateX(-50%); top: 15px; }
-    .logo-insignia { height: 100px; width: 100px; }
-    .nav-links { margin-top: 60px; gap: 10px; }
-    .nav-links a { font-size: 11px; }
-    .cartel { height: 60vh; padding-top: 20%; }
+    .insignia-link {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 15px;
+    }
+    .logo-insignia {
+        height: 100px; /* Ajusta según sea necesario */
+        width: 100px; /* Ajusta según sea necesario */
+        object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+    }
+    .nav-links {
+        flex-direction: column; /* Cambia a columna en móvil */
+        margin-top: 60px;
+        gap: 10px;
+    }
+    .nav-links a {
+        font-size: 11px; /* Ajusta el tamaño del texto */
+    }
+    .cartel {
+        height: 60vh; /* Ajusta la altura en móvil */
+        padding-top: 20%; /* Ajusta el padding */
+    }
 }
+
 
 @media (min-width: 900px) {
     .contacto-container { 
@@ -334,14 +352,6 @@ footer {
 @keyframes golpeMartillo { 
     0% { opacity: 0; transform: translateY(-100px) scale(1.5); } 
     100% { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes entradaSuave { 
-    from { opacity: 0; transform: translateY(20px); } 
-    to { opacity: 1; transform: translateY(0); } }
+@keyframes entradaSuave { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 .cartel { animation: sacudidaSeccion 0.2s linear 0.7s; }
-@keyframes sacudidaSeccion {
-    0% { transform: translate(0,0); }
-    25% { transform: translate(3px, 3px); }
-    50% { transform: translate(-3px, -3px); }
-    100% { transform: translate(0,0); }
-}
