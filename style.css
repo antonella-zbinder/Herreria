@@ -1,4 +1,3 @@
-/* --- VARIABLES DE COLOR --- */
 :root {
     --principal: #111;
     --acento: #d4af37;
@@ -6,7 +5,7 @@
     --gris-claro: #f4f4f4;
 }
 
-/* --- ESTILOS GENERALES Y RESET --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -95,15 +94,18 @@ header {
 
 
 .cartel {
-    margin-top: 70px;
+    margin-top: 4%;
     height: 75vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/hero.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-image: url('img/1000164829.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: end;
     justify-content: center;
-    color: white;
-    text-align: center;
+    color: var(--gris-claro);
     padding: 0 5%;
 }
 
@@ -149,9 +151,10 @@ header {
     margin-bottom: 20px;
 }
 
-.servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.servicios-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     margin-top: 40px;
 }
@@ -162,6 +165,8 @@ header {
     border-radius: 10px;
     border-bottom: 5px solid var(--acento);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 0 1 calc(30% - 20px);
+    min-width: 250px;
 }
 
 .servicio-card i {
@@ -372,61 +377,56 @@ footer {
 
 @media (max-width: 768px) {
 
-    /* Ajustamos el header para que no corte el logo */
+
     header {
         height: 60px;
-        /* Un poco más bajo para móviles */
+
     }
 
-    /* Forzamos que la navbar sea un renglón y no columna */
+
     .navbar {
         width: 95%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        /* Links a la derecha */
         align-items: center;
     }
 
-    /* Posicionamos el logo a la izquierda y flotando */
+
     .insignia-link {
         left: 10px;
         top: 5px;
-        /* Esto lo hace bajar del header hacia el gris */
         transform: none;
     }
 
     .logo-insignia {
         height: 80px;
-        /* Tamaño intermedio para que se luzca */
         width: 80px;
         border-width: 3px;
     }
 
-    /* Links en una sola línea y más pequeños */
+
     .nav-links {
         flex-direction: row;
         margin-top: 0;
         gap: 8px;
-        /* Espacio reducido entre palabras */
+
     }
 
     .nav-links a {
         font-size: 10px;
-        /* Texto más chico para que entre todo */
         letter-spacing: 0.5px;
     }
 
-    /* El botón de presupuesto también más compacto */
+
     .btn-contacto {
         padding: 6px 10px;
         font-size: 10px;
     }
 
-    /* Ajuste del cartel principal */
+
     .cartel {
         margin-top: 60px;
-        /* Igual al alto del header */
         height: 60vh;
         padding-top: 10%;
     }
@@ -472,49 +472,236 @@ footer {
 
 .cuadro {
     width: 80%;
-    /* Quitamos el height fijo para que el cuadro crezca según el texto */
-    min-height: 40%; 
+    min-height: 40%;
     background-color: white;
-    margin: 40px auto; /* Centra el cuadro y da espacio arriba/abajo */
+    margin: 40px auto;
     padding: 40px 20px;
     border-radius: 10px;
     border-bottom: 5px solid var(--acento);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
-    /* --- CLAVE PARA APILAR ELEMENTOS --- */
     display: flex;
-    flex-direction: column; /* Apila uno abajo del otro */
-    align-items: center;    /* Centra todo horizontalmente */
-    gap: 25px;             /* Crea un espacio uniforme entre título, foto y texto */
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
     text-align: center;
 }
 
 .titulo-resaltado {
     position: relative;
-    display: inline-block; /* Cambiado de inline-table para mejor soporte */
+    display: inline-block;
     font-size: 2rem;
     z-index: 1;
-    margin: 0; /* Quitamos márgenes por defecto para que el gap mande */
+    margin: 0;
+
 }
 
 .titulo-resaltado::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -1px;       /* Ajusta la posición sobre las letras */
+    bottom: -1px;
     width: 100%;
-    height: 8%;      /* Grosor en px para que sea visible */
+    height: 8%;
     background-color: #d4af37;
     z-index: -1;
 }
 
 #fotoequipo {
     width: 40%;
-    height: auto;      /* Mantiene la proporción de la imagen */
-    border-radius: 8px; /* Opcional: para que combine con el cuadro */
+    height: auto;
+    border-radius: 8px;
 }
 
-#texto{
+
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+
+
+
+.polaroid-card:hover {
+    transform: rotate(-2deg) scale(1.05);
+}
+
+.photo-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.caption p {
+    font-family: 'Handlee', cursive, sans-serif;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+
+
+.carousel-button.left {
+    left: 0%;
+}
+
+.carousel-button.right {
+    right: -5%;
+}
+
+
+#materiales h2 {
+    text-align: center;
+    color: #d4af37;
+}
+
+.ama {
+    color: #d4af37;
+}
+
+
+#materiales {
+    padding: 80px 10%;
+    background-color: var(--gris-fondo);
+    text-align: center;
+    overflow: hidden;
+}
+
+#materiales h2 {
+    color: var(--acento);
+    margin-bottom: 10px;
+}
+
+.ama {
+    color: var(--acento);
+    margin-bottom: 40px;
+}
+
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: max-content;
+}
+
+.polaroid-card:hover {
+    transform: scale(1.02);
+}
+
+.photo-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.carousel-button {
+    background-color: transparent;
+    color: var(--acento);
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 10px;
+}
+
+.carousel-button:hover {
+    transform: translateY(-50%) scale(1.2);
+    color: white;
+    background-color: transparent;
+}
+
+.carousel-button.left {
+    left: -60px;
+}
+
+.carousel-button.right {
+    right: -60px;
+}
+
+
+.polaroid-card {
+    background-color: white;
+    width: 400px;
+    min-height: 500px;
+    padding: 20px 20px 30px 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+
+.polaroid-card:hover {
+    transform: rotate(-2deg) scale(1.05);
+}
+
+.photo-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.caption p {
+    font-family: 'Handlee', cursive, sans-serif;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+#texto {
     margin-left: 10%;
     margin-right: 10%;
 }
