@@ -5,7 +5,6 @@
     --gris-claro: #f4f4f4;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +18,7 @@ body {
     scroll-behavior: smooth;
 }
 
-
+/* --- HEADER Y NAVEGACIÓN --- */
 header {
     background: var(--principal);
     height: 70px;
@@ -57,8 +56,7 @@ header {
     border: 5px solid var(--acento);
     background: #1a1a1a;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
     cursor: pointer;
 }
 
@@ -92,29 +90,35 @@ header {
     font-weight: bold;
 }
 
-
+/* --- CARTEL PRINCIPAL --- */
 .cartel {
-    margin-top: 4%;
+    margin-top: 70px; 
     height: 75vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    background-image: url('img/1000164829.jpg');
-    background-position: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('img/1000164829.jpg');
+    background-position: center; /* Volvemos al centrado perfecto para PC */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    text-align: end;
-    justify-content: center;
-    color: var(--gris-claro);
+    justify-content: center; /* Esto mantiene el texto centrado verticalmente (sobre la línea gris) */
+    align-items: flex-end; /* Lo alinea a la derecha */
     padding: 0 5%;
+    animation: sacudidaSeccion 0.2s linear 0.7s;
 }
 
+.cartel-content {
+    /* Le sacamos el position absolute que rompía todo en PC */
+    text-align: right;
+    max-width: 800px;
+    margin-bottom: 5%; /* Lo levanta un pelín para que calce exacto sobre la línea gris */
+}
 .titulo-robusto {
     font-family: 'Arial Black', 'Impact', sans-serif;
     font-size: clamp(1.8rem, 8vw, 3.2rem);
     line-height: 1.1;
     text-shadow: 4px 4px 0px #000;
     text-transform: uppercase;
+    color: var(--gris-claro);
     animation: golpeMartillo 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
@@ -140,7 +144,7 @@ header {
     font-size: clamp(0.7rem, 2.5vw, 1.1rem);
 }
 
-
+/* --- SERVICIOS --- */
 .servicios {
     padding: 100px 10% 50px;
     text-align: center;
@@ -175,6 +179,165 @@ header {
     margin-bottom: 15px;
 }
 
+/* --- NOSOTROS --- */
+.nosotros {
+    padding: 40px 10%;
+}
+
+.cuadro {
+    width: 80%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 40px 20px;
+    border-radius: 10px;
+    border-bottom: 5px solid var(--acento);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.titulo-resaltado {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    z-index: 1;
+    margin: 0;
+}
+
+.titulo-resaltado::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 8%;
+    background-color: #d4af37;
+    z-index: -1;
+}
+
+#fotoequipo {
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#texto {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* --- SECCIÓN MATERIALES (CARRUSEL POLAROID) --- */
+#materiales {
+    padding: 80px 0;
+    background-color: var(--gris-fondo);
+    text-align: center;
+    overflow: hidden;
+}
+
+#materiales h2 {
+    color: var(--acento);
+    margin-bottom: 10px;
+}
+
+.ama {
+    color: var(--acento);
+    margin-bottom: 40px;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px; /* IMPORTANTE: Espacio para que entren las flechas */
+    box-sizing: border-box;
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: max-content;
+}
+
+.polaroid-card {
+    background-color: white;
+    width: 400px;
+    min-height: 500px;
+    padding: 20px 20px 30px 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.polaroid-card:hover {
+    transform: rotate(-2deg) scale(1.05);
+}
+
+.photo-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.caption p {
+    font-family: 'Handlee', cursive, sans-serif;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.carousel-button {
+    background-color: transparent;
+    color: var(--acento);
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 10px;
+}
+
+.carousel-button:hover {
+    transform: translateY(-50%) scale(1.2);
+    color: white;
+}
+
+.carousel-button.left {
+    left: 0px; /* Alineado al borde del padding del container */
+}
+
+.carousel-button.right {
+    right: 0px;
+}
+
+/* --- PROYECTOS (SWIPER) --- */
 .galeria {
     padding: 80px 10%;
     background: #e9e9e9;
@@ -267,6 +430,7 @@ header {
     object-fit: cover;
 }
 
+/* --- CONTACTO Y FOOTER --- */
 .cuadro-contacto {
     background: #111;
     padding: 60px 10%;
@@ -281,6 +445,14 @@ header {
     margin: 0 auto;
     gap: 30px;
     text-align: center;
+}
+
+@media (min-width: 900px) {
+    .contacto-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
 }
 
 .contacto-texto h2 {
@@ -326,7 +498,6 @@ footer {
     letter-spacing: 1px;
 }
 
-
 .ubicacion i {
     color: var(--acento);
     font-size: 1.4rem;
@@ -344,8 +515,6 @@ footer {
     color: var(--acento);
 }
 
-
-
 .footer-copy {
     margin-top: 40px;
     border-top: 1px solid #333;
@@ -353,7 +522,6 @@ footer {
     font-size: 0.8rem;
     color: #666;
 }
-
 
 .mapa-link {
     text-decoration: none;
@@ -366,342 +534,78 @@ footer {
     transform: translateY(-3px);
 }
 
-.mapa-link .ubicacion i {
-    color: var(--acento);
-    transition: 0.3s;
-}
-
 .mapa-link:hover .ubicacion i {
     text-shadow: 0 0 10px var(--acento);
 }
 
-@media (max-width: 768px) {
-
-
-    header {
-        height: 60px;
-
-    }
-
-
-    .navbar {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-
-    .insignia-link {
-        left: 10px;
-        top: 5px;
-        transform: none;
-    }
-
-    .logo-insignia {
-        height: 80px;
-        width: 80px;
-        border-width: 3px;
-    }
-
-
-    .nav-links {
-        flex-direction: row;
-        margin-top: 0;
-        gap: 8px;
-
-    }
-
-    .nav-links a {
-        font-size: 10px;
-        letter-spacing: 0.5px;
-    }
-
-
-    .btn-contacto {
-        padding: 6px 10px;
-        font-size: 10px;
-    }
-
-
-    .cartel {
-        margin-top: 60px;
-        height: 60vh;
-        padding-top: 10%;
-    }
-}
-
-
-@media (min-width: 900px) {
-    .contacto-container {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-}
-
-
+/* --- ANIMACIONES --- */
 @keyframes golpeMartillo {
-    0% {
-        opacity: 0;
-        transform: translateY(-100px) scale(1.5);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    0% { opacity: 0; transform: translateY(-100px) scale(1.5); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes entradaSuave {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====================================================== */
+/* DISEÑO RESPONSIVO (MÓVILES)             */
+/* ====================================================== */
+@media (max-width: 768px) {
+    
+    /* Header y Navbar */
+    header { height: 60px; }
+    .navbar { width: 95%; flex-direction: row; justify-content: flex-end; align-items: center; }
+    .insignia-link { left: 10px; top: 5px; transform: none; }
+    .logo-insignia { height: 80px; width: 80px; border-width: 3px; }
+    .nav-links { flex-direction: row; margin-top: 0; gap: 8px; }
+    .nav-links a { font-size: 10px; letter-spacing: 0.5px; }
+    .btn-contacto { padding: 6px 10px; font-size: 10px; }
+
+    /* Cartel Inicial (Ajuste de imagen para que no se corte feo) */
+    /* Cartel Inicial (Ajuste para celular) */
+    .cartel {
+        margin-top: 60px;
+        height: 60vh;
+        background-position: 70% center; /* Enfoca bien la chispa y el herrero en móviles */
+        justify-content: flex-end; /* En celu empujamos el texto hacia abajo */
+        padding-bottom: 15%; /* Le damos un margen desde el borde inferior */
+    }
+    
+    .cartel-content {
+        bottom: 15%; /* Baja el texto un poco más */
+        right: 5%;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .titulo-robusto { font-size: 1.8rem !important; }
+    .titulo-robusto .marca { font-size: 2.2rem !important; }
+    .subtitulo-industrial { font-size: 0.8rem; padding: 4px 10px; }
+
+    /* Carrusel de Materiales (Tarjetas más chicas y flechas acomodadas) */
+    .carousel-container {
+        padding: 0 40px; /* Reduce un poco el padding lateral en celular */
     }
-}
+    
+    .polaroid-card {
+        width: 260px; /* Tarjeta más angosta para celulares */
+        min-height: 350px;
+        padding: 15px 15px 25px 15px;
+    }
 
-.cartel {
-    animation: sacudidaSeccion 0.2s linear 0.7s;
-}
+    .caption p {
+        font-size: 1.1rem;
+    }
 
-.cuadro {
-    width: 80%;
-    min-height: 40%;
-    background-color: white;
-    margin: 40px auto;
-    padding: 40px 20px;
-    border-radius: 10px;
-    border-bottom: 5px solid var(--acento);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    text-align: center;
-}
-
-.titulo-resaltado {
-    position: relative;
-    display: inline-block;
-    font-size: 2rem;
-    z-index: 1;
-    margin: 0;
-
-}
-
-.titulo-resaltado::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 8%;
-    background-color: #d4af37;
-    z-index: -1;
-}
-
-#fotoequipo {
-    width: 40%;
-    height: auto;
-    border-radius: 8px;
-}
-
-
-
-.carousel-viewport {
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-}
-
-
-
-
-
-.polaroid-card:hover {
-    transform: rotate(-2deg) scale(1.05);
-}
-
-.photo-wrapper {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background-color: #eee;
-}
-
-.photo-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.caption {
-    margin-top: 5%;
-    text-align: center;
-}
-
-.caption p {
-    font-family: 'Handlee', cursive, sans-serif;
-    color: #333;
-    font-size: 1.1rem;
-}
-
-
-
-.carousel-button.left {
-    left: 0%;
-}
-
-.carousel-button.right {
-    right: -5%;
-}
-
-
-#materiales h2 {
-    text-align: center;
-    color: #d4af37;
-}
-
-.ama {
-    color: #d4af37;
-}
-
-
-#materiales {
-    padding: 80px 10%;
-    background-color: var(--gris-fondo);
-    text-align: center;
-    overflow: hidden;
-}
-
-#materiales h2 {
-    color: var(--acento);
-    margin-bottom: 10px;
-}
-
-.ama {
-    color: var(--acento);
-    margin-bottom: 40px;
-}
-
-
-.carousel-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-}
-
-.carousel-viewport {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 30px;
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    width: max-content;
-}
-
-.polaroid-card:hover {
-    transform: scale(1.02);
-}
-
-.photo-wrapper {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background-color: #eee;
-    border-radius: 4px;
-}
-
-.photo-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-
-.carousel-button {
-    background-color: transparent;
-    color: var(--acento);
-    border: none;
-    font-size: 4rem;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    transition: transform 0.3s ease, color 0.3s ease;
-    padding: 10px;
-}
-
-.carousel-button:hover {
-    transform: translateY(-50%) scale(1.2);
-    color: white;
-    background-color: transparent;
-}
-
-.carousel-button.left {
-    left: -60px;
-}
-
-.carousel-button.right {
-    right: -60px;
-}
-
-
-.polaroid-card {
-    background-color: white;
-    width: 400px;
-    min-height: 500px;
-    padding: 20px 20px 30px 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-}
-
-
-.polaroid-card:hover {
-    transform: rotate(-2deg) scale(1.05);
-}
-
-.photo-wrapper {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background-color: #eee;
-}
-
-.photo-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.caption {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.caption p {
-    font-family: 'Handlee', cursive, sans-serif;
-    color: #333;
-    font-size: 1.3rem;
-}
-
-#texto {
-    margin-left: 10%;
-    margin-right: 10%;
+    .carousel-button {
+        font-size: 3rem; /* Flechas más acordes al tamaño de pantalla */
+    }
+    
+    /* Cuadro Nosotros */
+    .cuadro {
+        width: 95%;
+    }
+    #fotoequipo {
+        width: 80%;
+    }
 }
