@@ -630,9 +630,13 @@ footer {
         width: 95%;
     }
     #fotoequipo {
+        /*con el porcentaje de width modificas el ancho de la imagen*/
         width: 80%;
+        /*con el de height modificas el alto, cambiar auto por el porcentaje querido*/
+        heigth: auto;
     }
 }
+
 
 
 
