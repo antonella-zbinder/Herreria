@@ -604,8 +604,11 @@ footer {
     }
 
     .caption p {
-        font-size: 1.1rem;
-    }
+    font-family: 'Segoe UI', sans-serif; /* Chau cursiva */
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600; /* Lo hacemos un poquito más grueso para que destaque */
+}
 
     .carousel-button {
         font-size: 3rem; /* Flechas más acordes al tamaño de pantalla */
@@ -619,6 +622,7 @@ footer {
         width: 80%;
     }
 }
+
 
 
 
