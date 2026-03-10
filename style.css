@@ -567,7 +567,7 @@ footer {
     /* Cartel Inicial (Ajuste para celular) */
     .cartel {
         margin-top: 60px;
-        height: 40vh; /* CLAVE: Al bajar la altura, la foto hace menos zoom y se ve mucho más del fondo */
+        height: 20%; /* CLAVE: Al bajar la altura, la foto hace menos zoom y se ve mucho más del fondo */
         min-height: 280px;
         background-position: 85% 100%; /* Enfoca la esquina inferior derecha donde está la línea */
         padding-bottom: 25px; /* Empuja el texto para que apoye exacto en la línea */
@@ -619,4 +619,5 @@ footer {
         width: 80%;
     }
 }
+
 
