@@ -93,7 +93,7 @@ header {
 /* --- CARTEL PRINCIPAL --- */
 .cartel {
     margin-top: 70px; 
-    height: 95vh;
+    height: 700px;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('img/1000164829.jpg');
     background-position: center; /* Volvemos al centrado perfecto para PC */
     background-repeat: no-repeat;
@@ -619,6 +619,7 @@ footer {
         width: 80%;
     }
 }
+
 
 
 
