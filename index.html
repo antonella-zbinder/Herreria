@@ -1,4 +1,5 @@
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <header>
@@ -35,24 +37,98 @@
 
     <section id="servicios" class="servicios">
         <h2>Nuestros Trabajos</h2>
-        <div class="servicios-grid">
-            <div class="servicio-card"><i class="fas fa-industry"></i><h3>Fabricación</h3><p>Cortinas metálicas a medida con materiales de alta resistencia.</p></div>
-            <div class="servicio-card"><i class="fas fa-tools"></i><h3>Reparación</h3><p>Montaje profesional en locales comerciales, industrias y hogares.</p></div>
-            <div class="servicio-card"><i class="fas fa-cog"></i><h3>Reparación</h3><p>Servicio técnico especializado y mantenimiento preventivo.</p></div>
-            <div class="servicio-card"><i class="fas fa-hammer"></i><h3>Herrería</h3><p>Trabajos integrales de herrería de obra y soldaduras especiales.</p></div>
+        <div class="servicios-flex">
+            <div class="servicio-card"><i class="fas fa-industry"></i>
+                <h3>Fabricación</h3>
+                <p>Cortinas metálicas a medida con materiales de alta resistencia.</p>
+            </div>
+            <div class="servicio-card"><i class="fas fa-tools"></i>
+                <h3>Instalación</h3>
+                <p>Montaje profesional en locales comerciales, industrias y hogares.</p>
+            </div>
+            <div class="servicio-card"><i class="fas fa-cog"></i>
+                <h3>Reparación</h3>
+                <p>Servicio técnico especializado y mantenimiento preventivo.</p>
+            </div>
+            <div class="servicio-card"><i class="fas fa-hammer"></i>
+                <h3>Herrería</h3>
+                <p>Trabajos integrales de herrería de obra y soldaduras especiales.</p>
+            </div>
+            <div class="servicio-card"><i class="fas fa-ruler"></i>
+                <h3>precisión</h3>
+                <p>Trabajos a medida de tu necesidad</p>
+            </div>
+        </div>
         </div>
     </section>
-    
+
 
     <section id="nosotros" class="nosotros">
         <div class="cuadro">
             <h2 class="titulo-resaltado">Nosotros</h2>
-            <img id="fotoequipo" src="img/1000164579.jpg" alt="Foto del equipo">
+            <!--Espacio para imagen grupal que pidieron, deben cambiar imagenejemplo por el nombre de archivo de la imagen deseada-->
+            <img id="fotoequipo" src="img/imagenejemplo.jpg" alt="Foto del equipo">
             <div id="texto">
-                <p>Existen muchas variaciones de pasajes de Lorem Ipsum, pero la mayoría han sufrido alguna alteración, ya sea por humor añadido o palabras aleatorias que resultan poco creíbles. Si va a usar un pasaje de Lorem Ipsum, debe asegurarse de que no haya nada vergonzoso oculto en medio del texto. Todos los generadores de Lorem Ipsum en internet tienden a repetir fragmentos predefinidos según sea necesario, lo que convierte a este en el primer generador auténtico en internet. Utiliza un diccionario de más de 200 palabras latinas, combinado con un puñado de estructuras de oraciones modelo, para generar un Lorem Ipsum de apariencia razonable. Por lo tanto, el Lorem Ipsum generado siempre está libre de repeticiones, humor añadido o palabras</p>
+                <!--texto ejemplo, en caso de necesitar cambiar el margen de izquierda y derecha del texto respecto al cuadro buscar en en la carpeta-->
+                <p>Existen muchas variaciones de pasajes de Lorem Ipsum, pero la mayoría han sufrido alguna alteración,
+                    ya sea por humor añadido o palabras aleatorias que resultan poco creíbles. Si va a usar un pasaje de
+                    Lorem Ipsum, debe asegurarse de que no haya nada vergonzoso oculto en medio del texto. Todos los
+                    generadores de Lorem Ipsum en internet tienden a repetir fragmentos predefinidos según sea
+                    necesario, lo que convierte a este en el primer generador auténtico en internet. Utiliza un
+                    diccionario de más de 200 palabras latinas, combinado con un puñado de estructuras de oraciones
+                    modelo, para generar un Lorem Ipsum de apariencia razonable. Por lo tanto, el Lorem Ipsum generado
+                    siempre está libre de repeticiones, humor añadido o palabras</p>
             </div>
         </div>
     </section>
+
+    <section id="materiales">
+    <h2>Nuestros Materiales</h2>
+    <p class="ama">Desliza para ver nuestras opciones</p>
+
+    <div class="carousel-container">
+        <div class="carousel-viewport">
+            <div class="carousel-track">
+                <div class="polaroid-card">
+                    <div class="photo-wrapper">
+                        <img src="img/material1.jpg" alt="Material 1">
+                    </div>
+                    <div class="caption">
+                        <p>Material 1</p>
+                    </div>
+                </div>
+                <div class="polaroid-card">
+                    <div class="photo-wrapper">
+                        <img src="img/material2.jpg" alt="Material 2">
+                    </div>
+                    <div class="caption">
+                        <p>Material 2</p>
+                    </div>
+                </div>
+                <div class="polaroid-card">
+                    <div class="photo-wrapper">
+                        <img src="img/material2.jpg" alt="Material 2">
+                    </div>
+                    <div class="caption">
+                        <p>Material 2</p>
+                    </div>
+                </div>
+                <div class="polaroid-card">
+                    <div class="photo-wrapper">
+                        <img src="img/material3.jpg" alt="Material 3">
+                    </div>
+                    <div class="caption">
+                        <p>Material 3</p>
+                    </div>
+                </div>
+                <!-- Agrega más tarjetas según sea necesario -->
+            </div>
+        </div>
+        <button class="carousel-button left">&#8249;</button>
+        <button class="carousel-button right">&#8250;</button>
+    </div>
+</section>
+
 
 
     <section id="proyectos" class="galeria">
@@ -62,11 +138,13 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 >
-
+                <!--aqui empieza el bloque de video, en caso de querer poner mas de un video en el carrucel deben duplicar este bloque de codigo-->
                 <div class="swiper-slide">
                     <div class="trabajo-item">
                         <div class="video-container">
                             <video controls poster="img/antes-horizontal.jpg">
+                                <!--aqui deben reemplazar video-ejemplo.mp4 por el nombre del video que debe ser formato mp4.
+                                el video debe subirse junto a los archivos, no en la carpeta img-->
                                 <source src="video-ejemplo.mp4" type="video/mp4">
                                 Tu navegador no soporta videos.
                             </video>
@@ -74,15 +152,16 @@
                         <h3>Instalación en vivo(ejemplo de yt)</h3>
                     </div>
                 </div>
-
+                <!--aqui termina el bloque de codigo para video, hasta aqui deben copiar para duplicarlo-->
+                <!--aqui empieza el bloque de codigo de las fotos antes-despues, al igual que las fotos deben dublicarlo para crear otro-->
                 <div class="swiper-slide">
                     <div class="trabajo-item">
                         <div class="comparador" onclick="toggleComparar(this)">
-                            <div class="img-wrapper antes">  
+                            <div class="img-wrapper antes">
                                 <img src="img/1000164595.jpg" alt="Antes">
                                 <span class="label">Antes</span>
                             </div>
-                            <div class="img-wrapper despues">                                
+                            <div class="img-wrapper despues">
                                 <img src="img/1000164598.jpg" alt="Después">
                                 <span class="label">Después</span>
                             </div>
@@ -94,11 +173,11 @@
                 <div class="swiper-slide">
                     <div class="trabajo-item">
                         <div class="comparador" onclick="toggleComparar(this)">
-                            <div class="img-wrapper antes">  
+                            <div class="img-wrapper antes">
                                 <img src="img/ejemplo.jpg" alt="Antes">
                                 <span class="label">Antes</span>
                             </div>
-                            <div class="img-wrapper despues">                                
+                            <div class="img-wrapper despues">
                                 <img src="img/ejemplo.jpg" alt="Después">
                                 <span class="label">Después</span>
                             </div>
@@ -110,11 +189,11 @@
                 <div class="swiper-slide">
                     <div class="trabajo-item">
                         <div class="comparador" onclick="toggleComparar(this)">
-                            <div class="img-wrapper antes">  
+                            <div class="img-wrapper antes">
                                 <img src="img/ejemplo.jpg" alt="Antes">
                                 <span class="label">Antes</span>
                             </div>
-                            <div class="img-wrapper despues">                                
+                            <div class="img-wrapper despues">
                                 <img src="img/ejemplo.jpg" alt="Después">
                                 <span class="label">Después</span>
                             </div>
@@ -148,27 +227,26 @@
     </section>
 
     <footer id="contacto-info">
-    <div class="footer-info">
-        <h3>Cortinas Metálicas Alvarez - Masias</h3>
-        
-        <a href="https://www.google.com/maps/search/?api=1&query=Cucha+Cucha+1496+Merlo+Buenos+Aires" target="_blank" class="mapa-link">
-            <p class="ubicacion">
-                <i class="fas fa-map-marker-alt"></i> 
-                Cucha Cucha 1496 (entre Burela y Aconcagua) 
-                <br><span>Zona Oeste - Merlo</span>
-            </p>
-        </a>
+        <div class="footer-info">
+            <h3>Cortinas Metálicas Alvarez - Masias</h3>
 
-    </div>
-    <div class="footer-copy">
-        <p>© 2026 Herrería Alvarez-Masias. Todos los derechos reservados.</p>
-    </div>
-</footer>
+            <a href="https://www.google.com/maps/search/?api=1&query=Cucha+Cucha+1496+Merlo+Buenos+Aires"
+                target="_blank" class="mapa-link">
+                <p class="ubicacion">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Cucha Cucha 1496 (entre Burela y Aconcagua)
+                    <br><span>Zona Oeste - Merlo</span>
+                </p>
+            </a>
+
+        </div>
+        <div class="footer-copy">
+            <p>© 2026 Herrería Alvarez-Masias. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
-
-
-
