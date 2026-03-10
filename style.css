@@ -567,20 +567,30 @@ footer {
     /* Cartel Inicial (Ajuste para celular) */
     .cartel {
         margin-top: 60px;
-        height: 60vh;
-        background-position: 70% center; /* Enfoca bien la chispa y el herrero en móviles */
-        justify-content: flex-end; /* En celu empujamos el texto hacia abajo */
-        padding-bottom: 15%; /* Le damos un margen desde el borde inferior */
+        height: 40vh; /* CLAVE: Al bajar la altura, la foto hace menos zoom y se ve mucho más del fondo */
+        min-height: 280px;
+        background-position: 85% 100%; /* Enfoca la esquina inferior derecha donde está la línea */
+        padding-bottom: 25px; /* Empuja el texto para que apoye exacto en la línea */
     }
     
     .cartel-content {
-        bottom: 15%; /* Baja el texto un poco más */
-        right: 5%;
+        width: 100%;
     }
 
-    .titulo-robusto { font-size: 1.8rem !important; }
-    .titulo-robusto .marca { font-size: 2.2rem !important; }
-    .subtitulo-industrial { font-size: 0.8rem; padding: 4px 10px; }
+    /* Achicamos drásticamente el título para que no tape todo */
+    .titulo-robusto { 
+        font-size: 1.3rem !important; 
+    }
+    .titulo-robusto .marca { 
+        font-size: 1.7rem !important; 
+        margin-top: 2px; 
+    }
+    .subtitulo-industrial { 
+        font-size: 0.65rem; 
+        padding: 4px 8px; 
+        margin-top: 10px;
+        letter-spacing: 2px;
+    }
 
     /* Carrusel de Materiales (Tarjetas más chicas y flechas acomodadas) */
     .carousel-container {
@@ -609,3 +619,4 @@ footer {
         width: 80%;
     }
 }
+
