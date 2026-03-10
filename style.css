@@ -18,7 +18,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- HEADER Y NAVEGACIÓN --- */
+
 header {
     background: var(--principal);
     height: 70px;
@@ -90,27 +90,27 @@ header {
     font-weight: bold;
 }
 
-/* --- CARTEL PRINCIPAL --- */
+
 .cartel {
     margin-top: 70px; 
     height: 700px;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('img/1000164829.jpg');
-    background-position: center; /* Volvemos al centrado perfecto para PC */
+    background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Esto mantiene el texto centrado verticalmente (sobre la línea gris) */
-    align-items: flex-end; /* Lo alinea a la derecha */
+    justify-content: center; 
+    align-items: flex-end; 
     padding: 0 5%;
     animation: sacudidaSeccion 0.2s linear 0.7s;
 }
 
 .cartel-content {
-    /* Le sacamos el position absolute que rompía todo en PC */
+    
     text-align: right;
     max-width: 800px;
-    margin-bottom: 5%; /* Lo levanta un pelín para que calce exacto sobre la línea gris */
+    margin-bottom: 5%; 
 }
 .titulo-robusto {
     font-family: 'Arial Black', 'Impact', sans-serif;
@@ -144,7 +144,7 @@ header {
     font-size: clamp(0.7rem, 2.5vw, 1.1rem);
 }
 
-/* --- SERVICIOS --- */
+
 .servicios {
     padding: 100px 10% 50px;
     text-align: center;
@@ -179,7 +179,7 @@ header {
     margin-bottom: 15px;
 }
 
-/* --- NOSOTROS --- */
+
 .nosotros {
     padding: 40px 10%;
 }
@@ -229,7 +229,6 @@ header {
     margin-right: 10%;
 }
 
-/* --- SECCIÓN MATERIALES (CARRUSEL POLAROID) --- */
 #materiales {
     padding: 80px 0;
     background-color: var(--gris-fondo);
@@ -254,7 +253,7 @@ header {
     width: 95%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 60px; /* IMPORTANTE: Espacio para que entren las flechas */
+    padding: 0 60px; 
     box-sizing: border-box;
 }
 
@@ -330,14 +329,13 @@ header {
 }
 
 .carousel-button.left {
-    left: 0px; /* Alineado al borde del padding del container */
+    left: 0px; 
 }
 
 .carousel-button.right {
     right: 0px;
 }
 
-/* --- PROYECTOS (SWIPER) --- */
 .galeria {
     padding: 80px 10%;
     background: #e9e9e9;
@@ -430,7 +428,6 @@ header {
     object-fit: cover;
 }
 
-/* --- CONTACTO Y FOOTER --- */
 .cuadro-contacto {
     background: #111;
     padding: 60px 10%;
@@ -446,6 +443,23 @@ header {
     gap: 30px;
     text-align: center;
 }
+    .social-icons {
+    margin-top: 1em;
+    position: relative;
+    z-index: 3;
+}
+
+.social-icons a {
+    color: #d4af37;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: grey;
+}
+
 
 @media (min-width: 900px) {
     .contacto-container {
@@ -538,7 +552,7 @@ footer {
     text-shadow: 0 0 10px var(--acento);
 }
 
-/* --- ANIMACIONES --- */
+
 @keyframes golpeMartillo {
     0% { opacity: 0; transform: translateY(-100px) scale(1.5); }
     100% { opacity: 1; transform: translateY(0) scale(1); }
@@ -549,9 +563,7 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ====================================================== */
-/* DISEÑO RESPONSIVO (MÓVILES)             */
-/* ====================================================== */
+
 @media (max-width: 768px) {
     
     /* Header y Navbar */
@@ -563,21 +575,20 @@ footer {
     .nav-links a { font-size: 10px; letter-spacing: 0.5px; }
     .btn-contacto { padding: 6px 10px; font-size: 10px; }
 
-    /* Cartel Inicial (Ajuste de imagen para que no se corte feo) */
-    /* Cartel Inicial (Ajuste para celular) */
+   
     .cartel {
         margin-top: 60px;
-        height: 30%; /* CLAVE: Al bajar la altura, la foto hace menos zoom y se ve mucho más del fondo */
+        height: 30%; 
         min-height: 280px;
-        background-position: 85% 100%; /* Enfoca la esquina inferior derecha donde está la línea */
-        padding-bottom: 25px; /* Empuja el texto para que apoye exacto en la línea */
+        background-position: 85% 100%; 
+        padding-bottom: 25px; 
     }
     
     .cartel-content {
         width: 100%;
     }
 
-    /* Achicamos drásticamente el título para que no tape todo */
+    
     .titulo-robusto { 
         font-size: 1.3rem !important; 
     }
@@ -592,29 +603,29 @@ footer {
         letter-spacing: 2px;
     }
 
-    /* Carrusel de Materiales (Tarjetas más chicas y flechas acomodadas) */
+    
     .carousel-container {
-        padding: 0 40px; /* Reduce un poco el padding lateral en celular */
+        padding: 0 40px; 
     }
     
     .polaroid-card {
-        width: 260px; /* Tarjeta más angosta para celulares */
+        width: 260px; 
         min-height: 350px;
         padding: 15px 15px 25px 15px;
     }
 
     .caption p {
-    font-family: 'Segoe UI', sans-serif; /* Chau cursiva */
+    font-family: 'Segoe UI', sans-serif; 
     color: #333;
     font-size: 1.2rem;
-    font-weight: 600; /* Lo hacemos un poquito más grueso para que destaque */
+    font-weight: 600; 
 }
 
     .carousel-button {
-        font-size: 3rem; /* Flechas más acordes al tamaño de pantalla */
+        font-size: 3rem; 
     }
     
-    /* Cuadro Nosotros */
+    
     .cuadro {
         width: 95%;
     }
@@ -622,6 +633,7 @@ footer {
         width: 80%;
     }
 }
+
 
 
 
